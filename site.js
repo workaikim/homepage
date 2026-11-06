@@ -40,3 +40,5 @@
   size();window.addEventListener('resize',function(){size();if(still)frame(performance.now())});
   requestAnimationFrame(frame);
 })();
+(function(){var st=document.getElementById('strip');if(!st)return;
+document.querySelectorAll('[data-strip]').forEach(function(b){b.addEventListener('click',function(){var f=st.querySelector('figure');var w=f?f.getBoundingClientRect().width+14:300;st.scrollBy({left:w*Number(b.getAttribute('data-strip')),behavior:'smooth'})})})})();
