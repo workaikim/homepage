@@ -601,3 +601,6 @@ p,li,dd,span,b,figcaption{text-wrap:pretty}
 .tcard br{display:block;content:"";margin-top:2px}
 .tcard .kv .v{text-wrap:balance}
 .tcard .tt,.tcard .tv{text-wrap:balance}
+.doc h3{font-size:1rem;margin:22px 0 8px;color:var(--accent-ink)}.doc li{margin:4px 0}
+.doc .sub{color:var(--muted);font-size:.86rem}
+.tcard .tv,.tcard .kv .v{text-wrap:pretty}
