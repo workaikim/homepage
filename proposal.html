@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>강의 제안서 · 엑셀 AI와 온톨로지</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f6f3;--surface:#fff;--ink:#17191b;--muted:#5d625f;--line:#dfe2dc;--mark:#f7c948;--mark-soft:#fdf3d2;--mark-ink:#5a4300;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141517;--surface:#1d1f22;--ink:#eceee9;--muted:#a3a8a3;--line:#2f3236;--mark:#f2c033;--mark-soft:#2c2614;--mark-ink:#f6d98a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141517;--surface:#1d1f22;--ink:#eceee9;--muted:#a3a8a3;--line:#2f3236;--mark:#f2c033;--mark-soft:#2c2614;--mark-ink:#f6d98a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.75;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 56px}
+main{max-width:820px;margin:0 auto}
+.back{display:inline-block;font-size:.9rem;color:var(--muted);text-decoration:none;margin-bottom:20px}
+.back:hover{color:var(--ink)}
+h1,h2{font-family:"Gothic A1","Apple SD Gothic Neo",sans-serif;text-wrap:balance;letter-spacing:-0.01em}
+h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;line-height:1.35;margin:0 0 8px}
+h2{font-size:1.3rem;font-weight:800;margin:0 0 14px}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+blockquote{margin:20px 0;background:var(--mark-soft);color:var(--mark-ink);border-radius:12px;padding:14px 18px}
+blockquote p{margin:0}
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.94rem;min-width:520px}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-weight:600;background:var(--mark-soft);color:var(--mark-ink)}
+td:first-child{white-space:nowrap;font-weight:500}
+ul{padding-left:1.2em}
+em{color:var(--muted);font-style:normal;font-size:.88rem}
+a{color:inherit}
+</style></head><body><main>
+<a class="back" href="index.html">← 소개 페이지로</a>
+<h1>엑셀 AI로 코드의 뜻을 맞추고, 온톨로지로 부서 간 제조 데이터를 잇다</h1>
+<p><strong>강의 제안서</strong> · 강사 김정은 · work.ai.kim@gmail.com</p>
+<blockquote>
+<p><strong>같은 코드, 다른 뜻.</strong>
+엑셀 안의 AI로 뜻을 맞추고, 온톨로지로 관계를 이어, 부서를 건너는 질문에 답합니다.</p>
+</blockquote>
+<hr />
+<h2>1. 교육 개요</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>과정 소개</td>
+<td>부서마다 다르게 쓰는 제조 데이터 코드를 맞추고 잇는 실습 과정</td>
+</tr>
+<tr>
+<td>교육 대상</td>
+<td>제조사 품질·생산·생산관리·IT 실무자, 부서 간 데이터 연계·AX 담당자</td>
+</tr>
+<tr>
+<td>교육 시간</td>
+<td>기본 4시간 (2시간 특강 · 8시간 1일 과정 가능)</td>
+</tr>
+<tr>
+<td>교육 방식</td>
+<td>실습 70% · 1인 1PC · 실제 도구 화면으로 진행</td>
+</tr>
+<tr>
+<td>교육 인원</td>
+<td>기관과 협의 (실습 품질을 위해 20명 내외 권장)</td>
+</tr>
+<tr>
+<td>사용 도구</td>
+<td>엑셀 + Claude in Excel · 파워쿼리 · Neo4j(온톨로지)</td>
+</tr>
+<tr>
+<td>수강생 산출물</td>
+<td>충돌 진단표 · 매핑표 · 마스킹·치환 규칙표 · 개념 지도 · 질문 목록 · 적용 계획</td>
+</tr>
+<tr>
+<td>소개 영상</td>
+<td>쇼츠 약 2분 30초 · 실습 흐름 전체를 실제 도구 화면으로</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>2. 교육 배경 및 필요성</h2>
+<p>생산팀과 품질팀의 불량 숫자가 다르게 나옵니다. 시스템마다 같은 말을 다르게 쓰기 때문입니다.</p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>현장에서 생기는 일</th>
+<th>그대로 합치면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생산(MES)의 SCR은 긁힘, 경영(ERP)의 SCR은 폐기</td>
+<td>불량과 폐기가 한 숫자로 섞인다</td>
+</tr>
+<tr>
+<td>생산은 긁힘·찍힘·얼룩으로, 품질은 "외관불량" 하나로 기록</td>
+<td>1:1로 맞출 수 없다</td>
+</tr>
+<tr>
+<td>같은 10분 정지를 한 공장은 순간정지, 다른 공장은 계획정지로 분류</td>
+<td>공장끼리 비교가 안 된다</td>
+</tr>
+</tbody>
+</table></div>
+<p>개인의 AI 활용을 부서·전사로 넓히는 순간, 이 문제부터 부딪칩니다.</p>
+<blockquote>
+<p><strong>현장 조사</strong> — 한국경제인협회, 매출 상위 제조기업 200곳
+협력사 AX 지원 방식 1위: <strong>생산·품질·설비·물류 데이터 연계 및 표준화 (34.4%)</strong>
+주요 장애: 데이터 연계·표준화·보안 관리의 어려움 (22.7%)</p>
+</blockquote>
+<hr />
+<h2>3. 교육 목표 및 기대 효과</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>수강 후 할 수 있는 것</th>
+<th>현장에서 달라지는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코드의 충돌(같은 글자 다른 뜻, 다른 글자 같은 뜻, 세밀도 차이)을 근거와 함께 찾는다</td>
+<td>부서마다 다르던 불량·폐기 숫자를 같은 기준으로 집계한다</td>
+</tr>
+<tr>
+<td>표준 개념 매핑표를 만들고, 1:1로 안 맞는 값을 골라낸다</td>
+<td>맞춘 기준이 문서로 남아 부서가 함께 쓴다</td>
+</tr>
+<tr>
+<td>매핑표를 매달 반복되는 규칙으로 만든다</td>
+<td>다음 달 데이터도 새로 고침 한 번으로 정리한다</td>
+</tr>
+<tr>
+<td>개념의 관계를 그래프로 잇고, 부서를 건너는 질문에 답한다</td>
+<td>표를 이어 붙이지 않고 답한다. 새 코드가 생겨도 같은 질문이 작동한다</td>
+</tr>
+<tr>
+<td>개인정보는 마스킹하고, 회사 고유 코드·수치는 치환해 AI에 넘긴 뒤 결과를 원래 값으로 되돌린다</td>
+<td>민감 정보와 기밀을 AI에 노출하지 않고 실무 파일을 다룬다</td>
+</tr>
+<tr>
+<td>우리 회사에서 먼저 맞출 코드와 답할 질문을 정한다</td>
+<td>전사 AX로 넓힐 때 무엇부터 할지 정리된다</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>4. 과정의 특징</h2>
+<p><strong>생성형 AI 기초 다음 단계입니다.</strong> 프롬프트·개인 업무 자동화가 아니라, 부서와 시스템 사이의 데이터를 맞추고 잇습니다.</p>
+<p><strong>엑셀만으로는 못 하는 일만 다룹니다.</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>단계</th>
+<th>엑셀 수식만으로는</th>
+<th>이 과정에서는</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 뜻 맞추기</strong><br>Claude in Excel</td>
+<td>글자가 같아야 찾는다. 같은 글자 다른 뜻은 섞고, 다른 글자 같은 뜻은 놓친다</td>
+<td>AI가 코드의 정의 문장을 읽고 뜻을 비교해, 충돌과 매핑 후보를 근거 셀과 함께 찾는다</td>
+</tr>
+<tr>
+<td><strong>② 반복 처리</strong><br>파워쿼리</td>
+<td>매달 같은 정리를 손으로 반복한다</td>
+<td>매핑표를 규칙으로 걸어 새로 고침 한 번. AI를 매번 부르지 않는다</td>
+</tr>
+<tr>
+<td><strong>③ 관계 잇기</strong><br>Neo4j 온톨로지</td>
+<td>분류가 늘 때마다 수식을 다시 짜고, 표를 이어 붙인다</td>
+<td>"~의 한 종류" 관계로 잇고, 부서를 건너는 질문에 질의 하나로 답한다</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>하나로 이어지는 실습입니다.</strong> 엑셀의 매핑표가 그래프의 뼈대가 되고, AI가 찾은 "1:1로 안 맞는 값"이 온톨로지가 풀 문제가 됩니다. 마지막에는 세 부서의 데이터를 건너야 나오는 답을 직접 찾습니다.</p>
+<blockquote>
+<p>질문: 외관불량으로 폐기된 제품은 어느 설비, 어느 공급사에서 나왔나?
+답: 폐기 로트 9개 중 7개가 <strong>프레스 2호기 + B사 원자재</strong> 조합에 몰려 있다. (교육용 가상 데이터)</p>
+</blockquote>
+<hr />
+<h2>5. 커리큘럼 (기본 4시간)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>시간</th>
+<th>모듈</th>
+<th>핵심 활동</th>
+<th>방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–0:30</td>
+<td>도입: 부서마다 다른 숫자</td>
+<td>사례로 문제 확인, 우리 회사의 "같은 말, 다른 뜻" 공유</td>
+<td>강의 · 토의</td>
+</tr>
+<tr>
+<td>0:30–1:20</td>
+<td>① 엑셀 AI로 뜻 맞추기</td>
+<td>AI에 넘기기 전 마스킹·치환으로 개인정보와 기밀 가리기, 수식 조회와 의미 비교의 차이, 충돌 3유형을 근거 셀과 함께 찾기</td>
+<td>시연 · 실습</td>
+</tr>
+<tr>
+<td>1:30–2:10</td>
+<td>② 매핑표와 반복 규칙</td>
+<td>매핑표 만들기, 1:1로 안 맞는 값 골라내기, 파워쿼리로 반복 적용</td>
+<td>실습</td>
+</tr>
+<tr>
+<td>2:10–3:00</td>
+<td>③ 온톨로지로 관계 잇기</td>
+<td>매핑표를 그래프로, "~의 한 종류" 계층, 로트·설비·공급사 연결</td>
+<td>시연 · 실습</td>
+</tr>
+<tr>
+<td>3:10–3:40</td>
+<td>④ 부서를 건너는 질문</td>
+<td>다단계 질문, 새 코드에도 같은 질문이 작동하는지 확인, 연결 경로 찾기</td>
+<td>실습</td>
+</tr>
+<tr>
+<td>3:40–4:00</td>
+<td>⑤ 우리 회사에 적용하기</td>
+<td>대상 시스템·코드·질문 정하기</td>
+<td>개인 계획서</td>
+</tr>
+</tbody>
+</table></div>
+<p>휴식 10분 2회 포함 (1:20, 3:00)</p>
+<p><strong>운영 형태</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>형태</th>
+<th>구성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2시간 특강</td>
+<td>시연 중심 + 모듈 ① 체험</td>
+</tr>
+<tr>
+<td>4시간 (기본)</td>
+<td>위 커리큘럼</td>
+</tr>
+<tr>
+<td>8시간 (1일)</td>
+<td>4시간 과정 + 수강생 회사의 실제 코드로 진단표·매핑표·개념 지도 만들기</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>6. 수강생 산출물</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>산출물</th>
+<th>담기는 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>충돌 진단표</td>
+<td>시스템·필드·코드별 정의와 충돌 유형</td>
+</tr>
+<tr>
+<td>매핑표</td>
+<td>원천 코드별 표준 개념과 근거, 1:1로 안 맞는 값 목록</td>
+</tr>
+<tr>
+<td>마스킹·치환 규칙표</td>
+<td>가릴 항목, 바꿀 값과 되돌리는 기준</td>
+</tr>
+<tr>
+<td>개념 지도</td>
+<td>"~의 한 종류" 계층과 로트·설비·공급사 연결 그래프</td>
+</tr>
+<tr>
+<td>질문 목록</td>
+<td>연결된 데이터로 답할 수 있게 된 질문과 질의문</td>
+</tr>
+<tr>
+<td>적용 계획</td>
+<td>우리 회사의 대상 시스템, 코드, 답하고 싶은 질문</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>7. 강사 소개</h2>
+<p><strong>김정은</strong> · AI 서비스 개발자 겸 강사 (AI인터시스 프리랜서)</p>
+<ul>
+<li><strong>제조 AX</strong> — 한국IT여성기업인협회 제조현장 AX 강사 과정 이수(데이터 표준화·온톨로지, 제조 데이터 분석·예측, 에이전트 설계)</li>
+<li><strong>개발 10년 이상(차장)</strong> — AI·헬스케어 서비스, 금융·보안·디지털 신원인증 모바일 서비스, 데이터 분석(DB·통계)</li>
+<li><strong>강의</strong> — 직장인 대상 Claude Design 실무(이벤터스), AICE 자격증 캠프(아산스마트마이스터고·구미여자상고), AI 학습앱 만들기(북일고)</li>
+<li><strong>자격</strong> — AICE Generative 1급, AICE Basic, AI리터러시지도사, 정보처리기사</li>
+</ul>
+<p><strong>실습 운영:</strong> 도구 오류는 바로 해결하고, 개념이 막히면 힌트부터 주어 스스로 풀게 합니다. 한 사람의 막힘으로 전체 흐름이 끊기지 않게 진행합니다.</p>
+<hr />
+<h2>8. 운영 조건</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>준비</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC</td>
+<td>1인 1대, 크롬, 인터넷</td>
+</tr>
+<tr>
+<td>엑셀</td>
+<td>웹 엑셀(무료 계정). 파워쿼리 편집은 데스크톱 엑셀(Microsoft 365) 필요, 없으면 강사 시연</td>
+</tr>
+<tr>
+<td>엑셀 안의 AI</td>
+<td>Claude in Excel 추가 기능 + Claude 유료 요금제(Pro 이상). 계정 준비는 기관과 협의</td>
+</tr>
+<tr>
+<td>온톨로지</td>
+<td>Neo4j AuraDB Free (브라우저, 무료 가입)</td>
+</tr>
+<tr>
+<td>사전 확인</td>
+<td>회사 PC에서 엑셀 추가 기능 설치·외부 사이트 접속 가능 여부</td>
+</tr>
+<tr>
+<td>사전 과제</td>
+<td>"우리 회사에서 부서마다 뜻이 다른 코드" 하나 떠올려 오기</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>데이터와 보안</strong>
+- 생산(MES)·품질(QMS)·경영(ERP)을 본뜬 교육용 가상 데이터로 실습합니다.
+- 실무 파일을 AI에 넘기는 방법도 다룹니다. 주민등록번호·연락처 같은 개인정보는 마스킹하고, 회사 고유 코드와 수치는 치환표로 바꿔 넘긴 뒤 결과를 원래 값으로 되돌립니다. 엑셀 안의 AI는 열린 파일을 읽으므로, 이 작업은 AI에 열기 전 별도 사본에서 합니다.
+- 회사 데이터를 쓰는 8시간 과정은 사내 보안 정책과 AI 사용 기준을 먼저 확인하고, 반출 가능한 코드표와 정의 문장 중심으로 진행합니다.</p>
+<p><strong>다루지 않는 것:</strong> 자동 적재 파이프라인(ETL·스케줄러) 구축, 오타·결측·단위 같은 일반 데이터 정제, 수천 개 코드 규모의 대량 처리·정확도 검증 체계</p>
+<hr />
+<p><em>실습 예시의 코드와 수량은 모두 교육용 가상 데이터입니다.</em>
+<em>출처: 한국경제인협회 제조기업 공급망 AX 조사(매출 상위 800대 제조기업 중 200개사 응답) / TEEPTRAK, Multi Plant OEE</em></p></main></body></html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>김정은 제조 AX 강사</title>
+<meta name="description" content="현장 업무를 AI 시스템으로 바꾸는 제조 AX 강사 김정은. 제조 데이터 표준화·온톨로지, AI 서비스 개발 프로세스, 노코드 데이터 분석, 현장 지식 AI 에이전트 강의.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column like a working notebook; highlighter-yellow marks the key words, callout boxes carry each topic */
+:root{
+  --bg:#f5f6f3; --surface:#ffffff; --ink:#17191b; --muted:#5d625f; --line:#dfe2dc;
+  --mark:#f7c948; --mark-soft:#fdf3d2; --mark-ink:#5a4300; --hack:#e5ecf7; --hack-ink:#1f3d6b;
+  --display:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141517; --surface:#1d1f22; --ink:#eceee9; --muted:#a3a8a3; --line:#2f3236;
+  --mark:#f2c033; --mark-soft:#2c2614; --mark-ink:#f6d98a; --hack:#1b2433; --hack-ink:#a9c4ec; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141517; --surface:#1d1f22; --ink:#eceee9; --muted:#a3a8a3; --line:#2f3236;
+  --mark:#f2c033; --mark-soft:#2c2614; --mark-ink:#f6d98a; --hack:#1b2433; --hack-ink:#a9c4ec; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:860px;margin:0 auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-0.01em}
+h2{font-size:1.5rem;font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.hl{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);padding:0 2px}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+nav.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:20px;border-bottom:1px solid var(--line)}
+nav.top b{font-family:var(--display);font-weight:800}
+nav.top ul{display:flex;gap:16px;list-style:none;margin:0;padding:0;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
+nav.top a{text-decoration:none}
+nav.top a:hover{color:var(--ink)}
+.hero{padding-block:56px 40px;display:grid;gap:18px}
+.hero h1{font-size:clamp(1.9rem,5vw,2.9rem);font-weight:800;line-height:1.3}
+.hero p{color:var(--muted);max-width:36em;font-size:1.05rem}
+.contact{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 16px;font-size:.95rem}
+.chip span{user-select:all}
+button.copy{border:0;background:var(--ink);color:var(--bg);border-radius:999px;padding:4px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--muted);background:var(--surface)}
+section{padding-block:36px;border-top:1px solid var(--line);display:grid;gap:20px}
+.callout{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:12px;min-width:0}
+.callout.main{border:2px solid var(--mark)}
+.badge{display:inline-block;font-size:.78rem;font-weight:600;border-radius:6px;padding:2px 9px;background:var(--mark-soft);color:var(--mark-ink)}
+.badge.hack{background:var(--hack);color:var(--hack-ink)}
+.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:22px;align-items:start}
+.steps{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:baseline}
+.steps .n{font-family:var(--mono);font-size:.85rem;color:var(--mark-ink);background:var(--mark-soft);border-radius:6px;text-align:center}
+.note{background:var(--mark-soft);color:var(--mark-ink);border-radius:10px;padding:10px 14px;font-size:.92rem}
+.media{border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.media video,.media img{display:block;width:100%;height:auto}
+.vert{aspect-ratio:9/16;max-width:100%}
+.vert video{height:100%;object-fit:cover}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sub{color:var(--muted);font-size:.95rem}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cta{justify-self:start;display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;font-size:.95rem;border-radius:10px;padding:10px 18px}
+.cta:hover{opacity:.88}
+.vids figure,.hack figure{margin:0;display:grid;gap:8px}
+figcaption{font-size:.9rem}
+figcaption b{display:block}
+.hack{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+ul.plain{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.hist{display:grid;gap:10px}
+.hist div{display:grid;grid-template-columns:96px 1fr;gap:12px;font-size:.95rem}
+.hist b{font-weight:600}
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ways .callout{padding:18px}
+footer{padding-block:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media (max-width:720px){
+  .main-grid,.hack,.cols,.grid2,.ways{grid-template-columns:minmax(0,1fr)}
+  .main-grid .vert{max-width:240px}
+  .vids{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vids figure:last-child{grid-column:span 2;max-width:calc(50% - 10px)}
+  nav.top ul{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+</style>
+</head><body>
+
+<div class="wrap">
+<nav class="top" aria-label="페이지 메뉴">
+  <b>김정은</b>
+  <ul>
+    <li><a href="#lectures">강의</a></li>
+    <li><a href="#videos">영상</a></li>
+    <li><a href="#hackathon">해커톤</a></li>
+    <li><a href="#career">경력</a></li>
+    <li><a href="#contact">문의</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <span class="label">제조 AX 강사</span>
+  <h1>현장 업무를<br><span class="hl">AI 시스템</span>으로 바꿉니다</h1>
+  <p>개발 경력 10년 이상. 현장의 데이터와 노하우를 AI가 쓸 수 있게 바꾸는 방법을 실습으로 가르칩니다.</p>
+  <div class="contact">
+    <span class="chip"><span id="mail1">work.ai.kim@gmail.com</span><button class="copy" type="button" data-copy="mail1">복사</button></span>
+  </div>
+</header>
+
+<section id="lectures" aria-labelledby="lec-h">
+  <h2 id="lec-h">강의 분야</h2>
+
+  <article class="callout main">
+    <div class="main-grid">
+      <div style="display:grid;gap:14px;min-width:0">
+        <span class="badge">주력 과정</span>
+        <h3>제조 데이터 표준화와 온톨로지</h3>
+        <p>같은 코드, 다른 뜻. 부서마다 다른 숫자가 나오는 이유를 풀고, 부서를 건너는 질문에 답합니다.</p>
+        <ol class="steps">
+          <li><span class="n">1</span><span><b>뜻 맞추기</b> · 엑셀 AI가 코드의 뜻을 비교</span></li>
+          <li><span class="n">2</span><span><b>반복 처리</b> · 파워쿼리로 매달 새로 고침 한 번</span></li>
+          <li><span class="n">3</span><span><b>관계 잇기</b> · 온톨로지로 부서 간 질문에 답</span></li>
+        </ol>
+        <p class="note">개인정보와 기밀은 가리고 AI에 넘기는 마스킹·치환 실습 포함</p>
+        <div class="tags"><span class="tag">2·4·8시간</span><span class="tag">실습 70%</span><span class="tag">품질·생산·IT 실무자</span></div>
+        <a class="cta" href="proposal.html">강의 제안서 보기 →</a>
+      </div>
+      <figure class="media vert" style="margin:0"><img src="assets/poster-ontology.png" alt="과정 포스터: 엑셀 AI로 코드의 뜻을 맞추고, 온톨로지로 부서 간 데이터를 잇다" loading="lazy" width="1080" height="1920"></figure>
+    </div>
+  </article>
+
+  <div class="grid2">
+    <article class="callout">
+      <h3>AI 서비스 개발 프로세스</h3>
+      <p class="sub">요구사항부터 설계, 구현, 검수까지. AI에게 구현을 맡겨도 설계와 검수의 기준은 직접 세웁니다.</p>
+      <div class="tags"><span class="tag">차시형 정규 과정</span><span class="tag">시연 강의 15분</span></div>
+    </article>
+    <article class="callout">
+      <h3>데이터 분석 · 모델 학습 · 평가</h3>
+      <p class="sub">전처리와 시각화부터 모델 학습, 성능 평가, 시뮬레이션까지 노코드로 끝까지 실습합니다.</p>
+      <div class="tags"><span class="tag">노코드</span><span class="tag">3일 집중 과정</span></div>
+    </article>
+  </div>
+  <article class="callout">
+    <h3>현장 지식 자산화와 AI 에이전트</h3>
+    <p class="sub">숙련자의 노하우를 AI 인터뷰로 문서화하고, 작업 기록을 표준 데이터로 정리해 현장 지식 에이전트를 만듭니다. 사내 문서 AI가 틀리는 이유도 단계별로 진단합니다.</p>
+    <div class="tags"><span class="tag">RAG · MCP</span><span class="tag">시연 강의 3편</span><span class="tag">평가 질문으로 검증</span></div>
+  </article>
+</section>
+
+<section id="videos" aria-labelledby="vid-h">
+  <h2 id="vid-h">강의 영상</h2>
+  <div class="vids">
+    <figure>
+      <div class="media vert"><video controls preload="none" playsinline poster="assets/shorts-ontology.jpg"><source src="assets/shorts-ontology.mp4" type="video/mp4"></video></div>
+      <figcaption><b>부서 간 코드를 잇다</b><span class="sub">엑셀 AI × 파워쿼리 × 온톨로지</span></figcaption>
+    </figure>
+    <figure>
+      <div class="media vert"><video controls preload="none" playsinline poster="assets/ontology-graphrag.jpg"><source src="assets/ontology-graphrag.mp4" type="video/mp4"></video></div>
+      <figcaption><b>문서 속 대상과 관계</b><span class="sub">온톨로지로 답을 찾는 GraphRAG</span></figcaption>
+    </figure>
+    <figure>
+      <div class="media vert"><video controls preload="none" playsinline poster="assets/ontology-master.jpg"><source src="assets/ontology-master.mp4" type="video/mp4"></video></div>
+      <figcaption><b>설비를 옮겨도 이력은 그대로</b><span class="sub">이름이 아니라 대상을 기준으로</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="hackathon" aria-labelledby="hack-h">
+  <div style="display:grid;gap:6px"><h2 id="hack-h">해커톤 출품작</h2><p class="sub">강의가 아니라, 해커톤에 나가 직접 기획하고 만든 AI 서비스입니다.</p></div>
+  <div class="hack">
+    <figure>
+      <div class="media"><video controls preload="none" playsinline poster="assets/safelog.jpg"><source src="assets/safelog.mp4" type="video/mp4"></video></div>
+      <figcaption><span class="badge hack">해커톤 출품 · Grok Bot Seoul Build Day</span><b style="margin-top:6px">SafeLog</b><span class="sub">퇴근 한마디를 기록하고, 위험을 알리고, 다음 근무조가 확인할 때까지 전달하는 안전 인수인계 봇</span></figcaption>
+    </figure>
+    <figure>
+      <div class="media"><video controls preload="none" playsinline poster="assets/rehearsal-lab.jpg"><source src="assets/rehearsal-lab.mp4" type="video/mp4"></video></div>
+      <figcaption><span class="badge hack">해커톤 출품</span><b style="margin-top:6px">리허설 랩</b><span class="sub">끝까지 발표하고, 다시 듣고, 내 말에서 나온 질문에 답하는 발표 연습 공간</span></figcaption>
+    </figure>
+  </div>
+  <figure style="margin:0;display:grid;gap:8px"><div class="media"><img src="assets/safelog-10cuts.jpg" alt="SafeLog 발표 10컷 요약" loading="lazy" width="1280" height="720"></div><figcaption class="sub">SafeLog 발표 요약</figcaption></figure>
+</section>
+
+<section id="career" aria-labelledby="car-h">
+  <h2 id="car-h">경력과 이력</h2>
+  <div class="cols">
+    <div style="display:grid;gap:12px;min-width:0">
+      <h3>개발 경력 10년 이상 <span class="sub" style="font-family:var(--body);font-weight:400">· 차장</span></h3>
+      <ul class="plain">
+        <li>AI · 헬스케어 서비스, 관리자 페이지</li>
+        <li>금융 · 보안 · 디지털 신원인증 모바일</li>
+        <li>교육용 앱, 위치기반 서비스</li>
+        <li>LG전자 Android 내장 앱, 전자세금계산서</li>
+        <li>데이터 분석 (DB · 통계)</li>
+      </ul>
+      <p class="sub">한성대학교 정보통신공학</p>
+    </div>
+    <div style="display:grid;gap:12px;min-width:0">
+      <h3>강의 이력</h3>
+      <div class="hist">
+        <div><b>AI인터시스</b><span>AI 서비스 개발 프로세스 정규 과정</span></div>
+        <div><b>이벤터스</b><span>Claude Design 실무 (직장인, 온라인)</span></div>
+        <div><b>와이즈교육</b><span>AICE 자격 취득 집중 과정</span></div>
+      </div>
+      <h3 style="margin-top:8px">교육 이수 · 자격</h3>
+      <ul class="plain">
+        <li>제조현장 AX 강사 과정 (한국IT여성기업인협회)</li>
+        <li>AI리터러시지도사 (하나파워온 강사 과정)</li>
+        <li>AICE Generative 1급 · AICE Basic · 정보처리기사</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="way-h">
+  <h2 id="way-h">강의 방식</h2>
+  <div class="ways">
+    <div class="callout"><h3>막힌 곳부터</h3><p class="sub">도구 오류는 바로 풀고, 개념은 힌트부터 드립니다.</p></div>
+    <div class="callout"><h3>내 업무 사례로</h3><p class="sub">대상과 업무를 먼저 듣고, 그 사례로 실습합니다.</p></div>
+    <div class="callout"><h3>결과물이 남게</h3><p class="sub">실습 결과와 자료를 그대로 업무에 가져갑니다.</p></div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="con-h">
+  <h2 id="con-h">강의 문의</h2>
+  <div class="contact">
+    <span class="chip"><span id="mail2">work.ai.kim@gmail.com</span><button class="copy" type="button" data-copy="mail2">복사</button></span>
+  </div>
+</section>
+
+<footer>실습 예시의 코드와 수량은 모두 교육용 가상 데이터입니다.</footer>
+</div>
+
+<script>
+document.querySelectorAll('button.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy), t=el.textContent;
+    var done=function(){b.textContent='복사됨';setTimeout(function(){b.textContent='복사'},1500)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+  });
+});
+</script>
+</body></html>
