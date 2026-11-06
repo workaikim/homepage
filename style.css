@@ -441,3 +441,145 @@ footer.site-foot{color:var(--dim)}
 .doc{max-width:var(--wrap)}
 .flag{margin-right:10px}.course .no{display:inline-block}.hero canvas{opacity:.55}@media (max-width:600px){.hero canvas{opacity:.4}}
 .pin .sticky{gap:16px;align-content:center;padding-block:12px}.pin h2.big{font-size:clamp(1.6rem,6.4vw,2.4rem)}.story-card{min-height:360px}@media (max-height:700px){.pin h2.big{font-size:1.5rem}.story-card{min-height:340px}.story-step{padding:22px 18px;gap:12px}}
+
+/* ===== v3.3 compact scale: smaller type, buttons and boxes; calmer phone layout ===== */
+body{font-size:15px;line-height:1.65}
+@media (min-width:900px){body{font-size:15.5px}:root{--wrap:580px;--narrow:580px}}
+.gut{padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.site-head .wrap{height:56px}
+.brand{font-size:.92rem;gap:8px}.brand i{width:22px;height:22px;border-radius:7px;font-size:.68rem}
+.menu{font-size:.88rem}.menu a{padding:6px 12px}
+.menu-btn{font-size:.82rem;padding:5px 12px}
+@media (max-width:820px){.menu{top:56px}}
+.pin .sticky,.hpin .sticky{top:56px;height:calc(100vh - 56px)}
+.btn{font-size:.9rem;padding:11px 20px}
+.btns{max-width:300px;gap:8px}
+.eyebrow{font-size:.72rem}
+.band{padding-block:56px}
+@media (min-width:900px){.band{padding-block:80px}}
+.sec-head{gap:10px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(1.45rem,5.6vw,1.9rem)}
+.sec-head p{font-size:.95rem}
+.hero{padding-top:44px}
+.hero .copy{gap:16px}
+.hero h1{font-size:clamp(1.9rem,8vw,2.7rem);letter-spacing:-.035em}
+.hero .lede{font-size:.95rem;max-width:26em}
+.hero .badge{font-size:.78rem;padding:4px 12px 4px 4px}.hero .badge b{font-size:.7rem;padding:2px 8px}
+.stage{margin-top:32px;padding-bottom:56px}
+.phone{width:min(56vw,220px);border-radius:34px;padding:8px}
+.phone video,.phone img{border-radius:27px}
+.phone::before{top:14px;width:62px;height:18px}
+.marquee{padding-block:12px}.marquee .track{font-size:.88rem;gap:32px}.marquee .track span::after{margin-left:32px}
+.key h2{font-size:clamp(1.5rem,6vw,2rem)}
+.key p{font-size:.95rem}
+.numbers{gap:10px;margin-top:32px}
+.num-card{padding:18px 12px;border-radius:16px}
+.num-card b{font-size:clamp(1.6rem,7vw,2rem)}
+.num-card span{font-size:.8rem}
+.courses{gap:12px}
+.course{padding:20px 20px;border-radius:18px;gap:6px}
+.course h3{font-size:1.08rem}
+.course p{font-size:.88rem;margin-top:4px}
+.course .tags{margin-top:10px}
+.course .go{font-size:.85rem;margin-top:6px}
+.course .no{font-size:.8rem}
+.flag{font-size:.68rem;padding:3px 8px;margin-bottom:6px}
+.tags{gap:6px}.tag{font-size:.74rem;padding:3px 10px}
+.hist{gap:10px;margin-top:24px}
+.hist-item{padding:14px 16px;gap:14px;border-radius:14px}
+.hist-item .ic{width:38px;height:38px;border-radius:10px;font-size:.72rem}
+.hist-item b{font-size:.95rem}.hist-item span{font-size:.85rem}
+.section-end{margin-top:28px}
+.pin h2.big{font-size:clamp(1.4rem,5.6vw,2rem)}
+.story-card{min-height:320px}
+.story-step{padding:22px 18px;gap:12px;border-radius:20px}
+.story-step h3{font-size:clamp(1.1rem,4.6vw,1.35rem)}
+.story-step p{font-size:.88rem}
+.code,.pill{font-size:.76rem;padding:5px 6px}
+.board .r{grid-template-columns:56px minmax(0,1fr) minmax(0,1fr)}
+.mats{gap:12px}
+.mcard{border-radius:16px}
+.mcard .body{padding:16px 18px 18px;gap:6px}
+.mcard .meta{font-size:.7rem}
+.mcard h3{font-size:1rem}
+.mcard p{font-size:.86rem}
+.mcard .go{font-size:.85rem}
+.reel{grid-auto-columns:66%;padding-inline:17%}
+@media (min-width:900px){.reel{grid-auto-columns:240px;padding-inline:calc(50% - 120px)}}
+.vid{border-radius:16px}
+figcaption b{font-size:.92rem}figcaption span{font-size:.8rem}
+.phero{padding-block:44px 32px}
+@media (min-width:900px){.phero{padding-block:64px 44px}}
+.phero .wrap{gap:14px}
+.phero h1{font-size:clamp(1.6rem,6.8vw,2.2rem)}
+.phero p{font-size:.95rem}
+.crumb{font-size:.8rem}
+.timeline{gap:12px}
+.timeline::before,.timeline::after{left:19px;top:20px}
+.tl{grid-template-columns:40px minmax(0,1fr);gap:12px}
+.tl .dot{width:40px;height:40px;font-size:.74rem}
+.tl .body{padding:13px 16px;border-radius:14px}
+.tl b{font-size:.95rem}.tl span{font-size:.86rem}
+.facts{gap:10px}.fact{padding:14px 16px;border-radius:14px}
+.fact dt{font-size:.72rem}.fact dd{font-size:.92rem}
+.note{font-size:.88rem;padding:12px 16px;margin-top:20px}
+.career{gap:14px}
+.job{padding:20px 18px;gap:10px;border-radius:18px}
+.job .org{font-size:.74rem}
+.job h3{font-size:1.05rem}
+.job ul{font-size:.88rem;gap:4px}
+.job .sess{gap:8px}.job .sess div{padding:10px 12px;font-size:.88rem;gap:10px}
+.job .sess i{font-size:.7rem;padding:2px 8px}
+.dev{padding:28px 20px;gap:12px;border-radius:20px}
+.dev h2{font-size:clamp(1.25rem,5vw,1.6rem)!important}
+.dev p{font-size:.9rem}
+.cta{padding:36px 20px;border-radius:22px;gap:14px}
+.cta h2{font-size:clamp(1.4rem,5.6vw,1.8rem)}
+.cta p{font-size:.9rem}
+.mail{font-size:.88rem;padding:6px 6px 6px 14px}.mail button{font-size:.78rem;padding:6px 12px}
+.strip{grid-auto-columns:84%}.strip figcaption{font-size:.8rem}
+.strip-nav button{width:40px;height:40px;font-size:1rem}
+.doc{padding:22px 18px}.doc h2{font-size:1.2rem;margin:40px 0 12px}.doc p,.doc ul{font-size:.92rem}.doc table{font-size:.85rem}
+footer.site-foot{font-size:.76rem;padding-block:28px 36px}
+
+/* ===== home page: black night sky, white type, yellow highlight (restored) ===== */
+body.home{
+  --bg:#070b10; --surface:#111a24; --tint:#0d141c; --tint2:#162230; --line:#1f2c39;
+  --ink:#e9eef2; --ink2:#c9d3dc; --muted:#93a3b1; --dim:#5f7180;
+  --accent:#f2c14e; --accent-ink:#f2c14e; --accent-soft:rgba(242,193,78,.14);
+  --teal:#5fd4e6; --amber:#f2c14e; --amber-soft:rgba(242,193,78,.14);
+  background:var(--bg)
+}
+body.home .site-head{background:rgba(7,11,16,.72)}
+body.home .site-head.scrolled{background:rgba(7,11,16,.9)}
+body.home .brand i{background:#f2c14e;color:#1b1404}
+body.home .hero{background:transparent}
+body.home .hero canvas{opacity:1}
+body.home .hero .badge{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+body.home .hero .badge b{background:#f2c14e;color:#1b1404}
+body.home .hl-y{color:#f2c14e}
+body.home .hl{background:none;color:#f2c14e;padding:0}
+body.home .btn.pri{background:#f2c14e;color:#1b1404}
+body.home .btn.pri:hover{background:#ffd36a}
+body.home .btn.sec{box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+body.home .marquee{background:#0b1118;border-color:#1a2532}
+body.home .marquee .track span::after{color:#f2c14e}
+body.home .num-card b small{color:#f2c14e}
+body.home .course{background:#111a24;box-shadow:inset 0 0 0 1px #1f2c39}
+body.home .course .no,body.home .course .go{color:#f2c14e}
+body.home .course.main{background:linear-gradient(135deg,#1a2636,#132030);box-shadow:inset 0 0 0 1px rgba(242,193,78,.35)}
+body.home .course.main .no,body.home .course.main .go{color:#f2c14e}
+body.home .course.main p{color:#a9b8c4}
+body.home .flag{background:#f2c14e;color:#1b1404}
+body.home .tag{background:#162230;color:#c9d3dc}
+body.home .band.tint{background:#0b1118;border-color:#141e29}
+body.home .num-card,body.home .hist-item,body.home .story-step,body.home .mcard{background:#111a24;box-shadow:inset 0 0 0 1px #1f2c39}
+body.home .hist-item .ic{background:rgba(242,193,78,.12);color:#f2c14e}
+body.home .story-dots i.on{background:#f2c14e}
+body.home .story-step .k,body.home .mcard .meta,body.home .num,body.home .mcard .go{color:#f2c14e}
+body.home .pill.on{background:rgba(95,212,230,.12);color:#5fd4e6}
+body.home .cta{background:linear-gradient(135deg,#132030,#1a2a3d);box-shadow:inset 0 0 0 1px rgba(242,193,78,.3)}
+body.home .cta .eyebrow{color:#f2c14e!important}
+body.home .mail button{background:#f2c14e;color:#1b1404}
+body.home .progress{background:linear-gradient(90deg,#f2c14e,#5fd4e6)}
+body.home .menu a[aria-current="page"]{background:#f2c14e;color:#1b1404}
