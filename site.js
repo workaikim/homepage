@@ -18,7 +18,10 @@
 
   // reveal + counters
   var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');count(e.target);io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'}):null;
-  document.querySelectorAll('[data-reveal],.tl').forEach(function(el){if(io&&!still)io.observe(el);else{el.classList.add('in');count(el)}});
+  var rv=[].slice.call(document.querySelectorAll('[data-reveal],.tl'));
+  function reveal(){var vh=window.innerHeight;rv=rv.filter(function(el){if(still||el.getBoundingClientRect().top<vh*0.98){el.classList.add('in');count(el);return false}return true})}
+  reveal();window.addEventListener('scroll',reveal,{passive:true});window.addEventListener('resize',reveal);window.addEventListener('load',reveal);
+  setTimeout(function(){rv.forEach(function(el){if(el.getBoundingClientRect().top<window.innerHeight*1.2){el.classList.add('in');count(el)}})},1500);
   function count(root){(root.matches&&root.matches('[data-count]')?[root]:[]).concat([].slice.call(root.querySelectorAll?root.querySelectorAll('[data-count]'):[])).forEach(function(n){
     if(n._done)return;n._done=1;var to=+n.getAttribute('data-count'),suf=n.getAttribute('data-suf')||'',t0=null;
     if(still){n.innerHTML=to+suf;return}

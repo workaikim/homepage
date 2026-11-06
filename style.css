@@ -590,3 +590,12 @@ body{font-size:14.5px}
 h1,h2,h3,.sec-head h2,.key h2{text-wrap:balance}
 p,li,dd,span,b,figcaption{text-wrap:pretty}
 .sec-head p,.phero p,.hero .lede,.key p,.cta p,.story-step p,.dev p,.center p{text-wrap:balance}.hist-item span{font-size:.82rem}
+/* proposal tables → stacked cards (mobile) */
+.tcards{display:grid;gap:10px;margin:14px 0 22px}
+.tcard{background:var(--tint);border-radius:14px;padding:14px 16px;display:grid;gap:6px}
+.tcard .tt{font-size:.95rem;color:var(--ink)}
+.tcard .tv{color:var(--ink2);font-size:.9rem}
+.tcard .kv{display:grid;gap:2px;padding-top:6px;border-top:1px solid var(--line)}
+.tcard .kv .k{font-size:.72rem;font-weight:700;color:var(--accent-ink);letter-spacing:.03em}
+.tcard .kv .v{font-size:.9rem;color:var(--ink2)}
+.tcard br{display:block;content:"";margin-top:2px}
