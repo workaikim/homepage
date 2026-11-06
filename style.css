@@ -583,3 +583,10 @@ body.home .cta .eyebrow{color:#f2c14e!important}
 body.home .mail button{background:#f2c14e;color:#1b1404}
 body.home .progress{background:linear-gradient(90deg,#f2c14e,#5fd4e6)}
 body.home .menu a[aria-current="page"]{background:#f2c14e;color:#1b1404}
+
+/* ===== v3.4 line-break hygiene ===== */
+body{font-size:14.5px}
+@media (min-width:900px){body{font-size:15px}}
+h1,h2,h3,.sec-head h2,.key h2{text-wrap:balance}
+p,li,dd,span,b,figcaption{text-wrap:pretty}
+.sec-head p,.phero p,.hero .lede,.key p,.cta p,.story-step p,.dev p,.center p{text-wrap:balance}.hist-item span{font-size:.82rem}
