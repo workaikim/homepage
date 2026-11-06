@@ -599,3 +599,5 @@ p,li,dd,span,b,figcaption{text-wrap:pretty}
 .tcard .kv .k{font-size:.72rem;font-weight:700;color:var(--accent-ink);letter-spacing:.03em}
 .tcard .kv .v{font-size:.9rem;color:var(--ink2)}
 .tcard br{display:block;content:"";margin-top:2px}
+.tcard .kv .v{text-wrap:balance}
+.tcard .tt,.tcard .tv{text-wrap:balance}
