@@ -604,3 +604,8 @@ p,li,dd,span,b,figcaption{text-wrap:pretty}
 .doc h3{font-size:1rem;margin:22px 0 8px;color:var(--accent-ink)}.doc li{margin:4px 0}
 .doc .sub{color:var(--muted);font-size:.86rem}
 .tcard .tv,.tcard .kv .v{text-wrap:pretty}
+.devlist{display:grid;gap:6px;justify-items:center;text-align:center;margin-top:6px}
+.devlist b{font-size:1rem;color:var(--ink);margin-bottom:4px}
+.devlist span{font-size:.92rem;color:var(--ink2);white-space:nowrap}
+.devlist i{font-style:normal;font-size:.82rem;color:var(--dim);margin-top:6px}
+.tcard .kv .v{text-wrap:balance}
